@@ -3,10 +3,7 @@ const fs = require('fs');
 // const fetch = require('node-fetch');
 const tabula = require("tabula-js");
 export async function POST(req) {
-
-  console.log("req.file :: ", req.file);
   const { buffer, originalname } = req.file;
-  console.log(req.file);
 
   try {
     const tmpFilePath = join(tmpdir(), originalname);

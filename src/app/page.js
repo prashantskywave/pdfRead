@@ -1,4 +1,5 @@
 "use client";
+
 import DataTable from "@/components/DataTable";
 import PDFUploader from "@/components/PDFUploader";
 import PdfViewerComponent from "@/components/PDFViewer";
@@ -18,7 +19,7 @@ export default function Home() {
   const currentday = purchaseDate.getDate().toString().padStart(2, "0");
 
   const Po_date = `${currentyear}/${currentmonth}/${currentday}/`;
-console.log(process.env.VMS_URL);
+
   const handleUpload = (file) => {
     console.log(
       ".." +

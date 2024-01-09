@@ -24,7 +24,7 @@ const PdfViewerComponent = ({ pdfUrl, fileData, setTableData }) => {
           try {
             formData.append("file", new Blob([buffer]));
 
-            const apiUrl = `${process.env.VMS_URL}api/fill`; // Replace with your API endpoint
+            const apiUrl = `https://devvms.vebasatrading.com/api/fill`;
 
             const response = await fetch(apiUrl, {
               method: "POST",

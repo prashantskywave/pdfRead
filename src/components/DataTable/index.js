@@ -36,7 +36,7 @@ const DataTable = ({ data }) => {
       .slice(1)
       .map((row) => convertRowToObject(row, headers));
 
-    const apiUrl = `${process.env.VMS_URL}api/getPoData`;
+    const apiUrl = `https://devvms.vebasatrading.com/api/getPoData`;
     const formData = new FormData();
     formData.append("poData", JSON.stringify(convertedData));
 
