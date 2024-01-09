@@ -2,9 +2,6 @@
 import DataTable from "@/components/DataTable";
 import PDFUploader from "@/components/PDFUploader";
 import PdfViewerComponent from "@/components/PDFViewer";
-// import OCRTable from "@/file/OCRTable";
-// import PDFUploader from "@/file/PDFUploader";
-// import PDFViewer from "@/file/PDFViewer";
 import { useState } from "react";
 
 export default function Home() {
@@ -12,7 +9,28 @@ export default function Home() {
   const [highlightedAreas, setHighlightedAreas] = useState([]);
   const [filex, setFilex] = useState(null);
   const [tableData, setTableData] = useState(null);
+
+  const purchaseDate = new Date();
+  const currentyear = purchaseDate.getFullYear();
+  const currentmonth = purchaseDate.toLocaleString("default", {
+    month: "short",
+  });
+  const currentday = purchaseDate.getDate().toString().padStart(2, "0");
+
+  const Po_date = `${currentyear}/${currentmonth}/${currentday}/`;
+
   const handleUpload = (file) => {
+    console.log(
+      ".." +
+        __dirname +
+        "vmsaccounts/storage/uploads/purchaseOrder/" +
+        `${Po_date}`
+    );
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get("filename");
+    console.log("myParam :: ", myParam);
+
     const url = URL.createObjectURL(file);
     setPdfUrl(url);
     setFilex(file);
@@ -22,10 +40,6 @@ export default function Home() {
     setHighlightedAreas([...highlightedAreas, area]);
   };
 
-  const handleAreaRemove = (area) => {
-    const updatedAreas = highlightedAreas.filter((a) => a !== area);
-    setHighlightedAreas(updatedAreas);
-  };
   return (
     <div>
       <PDFUploader onUpload={handleUpload} />

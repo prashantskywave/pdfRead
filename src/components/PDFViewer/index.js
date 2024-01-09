@@ -24,7 +24,7 @@ const PdfViewerComponent = ({ pdfUrl, fileData, setTableData }) => {
           try {
             formData.append("file", new Blob([buffer]));
 
-            const apiUrl = "http://192.168.29.131:6969/api/fill"; // Replace with your API endpoint
+            const apiUrl = "http://localhost:5555/api/fill"; // Replace with your API endpoint
 
             const response = await fetch(apiUrl, {
               method: "POST",
