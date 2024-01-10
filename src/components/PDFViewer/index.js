@@ -24,22 +24,17 @@ const PdfViewerComponent = ({ pdfUrl, fileData, setTableData }) => {
           try {
             formData.append("file", new Blob([buffer]));
 
-            const apiUrl = `https://devvms.vebasatrading.com/api/fill`;
+            console.log(":Lol");
+            // const apiUrl = "https://apipoinvoice.onrender.com/api/fill"; // Replace with your API endpoint
+            const apiUrl = "http://localhost:6969/api/fill"; // Replace with your API endpoint
 
-            const response = await fetch(apiUrl, {
+            fetch(apiUrl, {
               method: "POST",
               body: formData,
-            });
-
-            if (response.ok) {
-              console.log("File sent successfully to the API.");
-              setTableData(await response.json());
-            } else {
-              console.error(
-                "Error sending file to the API:",
-                response.statusText
-              );
-            }
+            })
+              .then((response) => response.json())
+              .then((data) => setTableData(data))
+              .catch((error) => console.error("Error:", error));
           } catch (error) {
             console.error("Error sending file to the API:", error);
           }
