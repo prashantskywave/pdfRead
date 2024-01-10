@@ -25,8 +25,8 @@ const PdfViewerComponent = ({ pdfUrl, fileData, setTableData }) => {
             formData.append("file", new Blob([buffer]));
 
             console.log(":Lol");
-            // const apiUrl = "https://apipoinvoice.onrender.com/api/fill"; // Replace with your API endpoint
-            const apiUrl = "http://localhost:6969/api/fill"; // Replace with your API endpoint
+            const apiUrl = "https://apipoinvoice.onrender.com/api/fill"; // Replace with your API endpoint
+            // const apiUrl = "http://localhost:6969/api/fill"; // Replace with your API endpoint
 
             fetch(apiUrl, {
               method: "POST",
