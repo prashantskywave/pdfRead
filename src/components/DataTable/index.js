@@ -68,8 +68,8 @@ const DataTable = ({ data, fileName }) => {
       .slice(1)
       .map((row) => convertRowToObject(row, headers));
 
-    const apiUrl = `http://localhost:6969/api/getPoData`;
-    // const apiUrl = `https://nodeapi.vmsaccounts.com/api/getPoData`;
+    // const apiUrl = `http://localhost:6969/api/getPoData`;
+    const apiUrl = `https://nodeapi.vmsaccounts.com/api/getPoData`;
 
     const response = async (convertedData) => {
       try {
