@@ -137,7 +137,7 @@ const DataTable = ({ data, fileName }) => {
             <strong className="uppercase">
               <span className=" text-red-600">*</span>vat
             </strong>{" "}
-            for vat
+            for vat {" in Percentage (%)"}
           </li>
           <li className="text-sm italic mt-2 text-black font-extrabold"><span className=" text-red-600">**</span>All Cells are <span className="bg-blue-300 text-white px-1">Editable</span>.</li>
         </ul>
