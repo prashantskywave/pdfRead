@@ -56,7 +56,7 @@ const PdfViewerComponent = ({ pdfUrl, fileData, setTableData }) => {
           left: boundingRect.left,
           top: boundingRect.top,
           right: boundingRect.right,
-          bottom: boundingRect.bottom,
+          bottom: boundingRect.bottom + 35,
         };
         console.log(area);
         console.log(JSON.stringify(area));

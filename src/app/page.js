@@ -41,6 +41,7 @@ export default function Home() {
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get("filename");
     const filePath = `https://vmsaccounts.com/storage/uploads/purchaseOrder/${Po_date}${myParam}`;
+    // const filePath = `https://vmsaccounts.com/storage/uploads/purchaseOrder/2024/Feb/21/PO544-QA-2024_02_21.pdf`;
 
     // console.log("filePath :: ", filePath);
     fetch(filePath)
